@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vertical_gradient_background"
+    tools:context=".OpeningPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:src="@drawable/page1_img">
+
+        </ImageView>
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="134dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="151dp"
+            android:layout_marginEnd="171dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="SPEND"
+            android:textColor="#fff"
+            android:textSize="84sp" />
+
+        <TextView
+            android:id="@+id/text_view2"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_below="@+id/text_view"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="259dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="-136dp"
+            android:layout_marginEnd="34dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="LOG"
+            android:textColor="#fff"
+            android:textSize="84sp" />
+
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="800dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-199dp"
+            android:layout_marginTop="353dp"
+            android:layout_marginEnd="209dp"
+            android:src="@drawable/triangle" />
+
+        <ImageView
+
+            android:layout_width="400dp"
+            android:layout_height="800dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="353dp"
+            android:layout_marginEnd="-198dp"
+            android:src="@drawable/triangle" />
+
+        <Button
+            android:id="@+id/StartButton"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="112dp"
+            android:background="@drawable/custom_button"
+            android:text="START"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

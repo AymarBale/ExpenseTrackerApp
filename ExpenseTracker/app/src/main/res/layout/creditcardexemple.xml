@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CreditCard"
+    android:layout_width="330dp"
+    android:layout_height="160dp"
+    android:layout_marginTop="120dp"
+    android:background="@drawable/rounded_rectangle"
+    android:elevation="9dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginStart="40dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <Button
+        android:id="@+id/deleteCross"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/white_cross"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="-4dp"
+        android:contentDescription="Delete" />
+
+    <TextView
+        android:id="@+id/tv_expiration_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="73dp"
+        android:text="Expiration Date"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREDIT CARD"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_card_title"
+        android:layout_marginTop="8dp"
+        android:fontFamily="monospace"
+        android:text="****  ****  ****  3456"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_card_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_card_number"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="Card Holder"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_expire_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_card_holder"
+        android:layout_marginStart="-70dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/tv_expiration_label"
+        android:text="12/24"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_cvv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_card_holder"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="7dp"
+        android:layout_toEndOf="@id/tv_expire_date"
+        android:text="123"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_cvv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_card_holder"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="-18dp"
+        android:layout_toEndOf="@+id/tv_expiration_label"
+        android:fontFamily="monospace"
+        android:text="CVV"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="95dp"
+        android:fontFamily="monospace"
+        android:text="Name"
+        android:textColor="#fff" />
+</RelativeLayout>

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/vertical_gradient_background"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/goBack"
+        android:layout_width="48dp"
+        android:layout_height="37dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:background="#00FFFFFF"
+        android:rotation="360"
+        android:rotationY="-180"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/arrowright" />
+
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="330dp"
+            android:layout_height="650dp"
+            android:columnCount="2"
+            android:rowCount="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <FrameLayout
+                android:id="@+id/topMess"
+                android:layout_width="330dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="50px"
+                android:background="@drawable/rounded_corners" >
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:background="#282E32"
+                        app:srcCompat="@drawable/dollarincome" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold"
+                    android:textFontWeight="900"
+                    android:text="Total income"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/fira_sans"
+                    android:textStyle="bold"
+                    android:textFontWeight="900"
+                    android:textSize="40dp"
+                    android:textColor="#fff"
+                    android:text="$12,000"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/charts"
+                android:layout_width="330dp"
+                android:layout_height="230dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="50px"
+                android:background="@drawable/rounded_corners" >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="10dp">
+
+
+                    <!--Linear layout to display pie chart -->
+                    <!-- and details of pie chart-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!--Pie chart to display the data
+
+                        <com.anychart.AnyChartView
+                            android:id="@+id/any_chart_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/fira_sans"
+                            />
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:fontFamily="@font/fira_sans"
+                            />-->
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChart"
+                            android:layout_width = "match_parent"
+                            android:layout_height= "match_parent"
+                            />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+            <GridLayout
+                android:id="@+id/expense"
+                android:layout_width="320dp"
+                android:layout_height="160dp"
+                android:columnCount="2"
+                android:padding="5dp"
+                android:layout_marginBottom="50px"
+                android:rowCount="2">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_corners" >
+                    <ImageButton
+                        android:id="@+id/calendarButton"
+                        android:layout_width="148dp"
+                        android:layout_height="147dp"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        app:srcCompat="@drawable/calendar"
+                        android:scaleType="fitCenter" /> <!-- Adjust scaleType as needed -->
+
+                </LinearLayout>
+
+
+
+                    <ScrollView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/rounded_corners"
+                        android:padding="16dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:background="#272729">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:background="#9a999e"
+                                    app:srcCompat="@drawable/dollar" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#fff"
+                                    android:fontFamily="@font/fira_sans"
+                                    android:layout_gravity="end|center_vertical"
+                                    android:text="$9.5  "/>
+
+                                <TextView
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_corners"
+                                    android:fontFamily="@font/anton_regular"
+                                    android:gravity="center"
+                                    android:text="Coffee"
+                                    android:textColor="#ffae00"
+                                    android:textSize="7dp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="10dp"
+                                android:background="#272729">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:background="#9a999e"
+                                    app:srcCompat="@drawable/dollar" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#fff"
+                                    android:fontFamily="@font/fira_sans"
+                                    android:layout_gravity="end|center_vertical"
+                                    android:text="$30  "/>
+
+                                <TextView
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_corners"
+                                    android:fontFamily="@font/anton_regular"
+                                    android:gravity="center"
+                                    android:textColor="#ffae00"
+                                    android:text="Meals"
+                                    android:textSize="7dp" />
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="10dp"
+                                android:background="#272729">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:background="#9a999e"
+                                    app:srcCompat="@drawable/dollar" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#fff"
+                                    android:fontFamily="@font/fira_sans"
+                                    android:layout_gravity="end|center_vertical"
+                                    android:text="$5  "/>
+
+                                <TextView
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_corners"
+                                    android:fontFamily="@font/anton_regular"
+                                    android:gravity="center"
+                                    android:textColor="#ffae00"
+                                    android:text="Snack"
+                                    android:textSize="7dp" />
+                            </FrameLayout>
+                            <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#272729">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:background="#9a999e"
+                                app:srcCompat="@drawable/dollar" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#fff"
+                                android:fontFamily="@font/fira_sans"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="$40  "/>
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_corners"
+                                android:fontFamily="@font/anton_regular"
+                                android:gravity="center"
+                                android:textColor="#ffae00"
+                                android:text="gas"
+                                android:textSize="7dp" />
+                        </FrameLayout>
+                            <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#272729">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:background="#9a999e"
+                                app:srcCompat="@drawable/dollar" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#fff"
+                                android:fontFamily="@font/fira_sans"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="$165  "/>
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_corners"
+                                android:fontFamily="@font/anton_regular"
+                                android:gravity="center"
+                                android:textColor="#ffae00"
+                                android:text="data"
+                                android:textSize="7dp" />
+                        </FrameLayout>
+                            <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#272729">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:background="#9a999e"
+                                app:srcCompat="@drawable/dollar" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#fff"
+                                android:fontFamily="@font/fira_sans"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="$60  "/>
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_corners"
+                                android:fontFamily="@font/anton_regular"
+                                android:gravity="center"
+                                android:textColor="#ffae00"
+                                android:text="bus"
+                                android:textSize="7dp" />
+                        </FrameLayout>
+                            <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#272729">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:background="#9a999e"
+                                app:srcCompat="@drawable/dollar" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#fff"
+                                android:fontFamily="@font/fira_sans"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="$199  "/>
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_corners"
+                                android:fontFamily="@font/anton_regular"
+                                android:gravity="center"
+                                android:textColor="#ffae00"
+                                android:text="gym"
+                                android:textSize="7dp" />
+                        </FrameLayout>
+                            <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#272729">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:background="#9a999e"
+                                app:srcCompat="@drawable/dollar" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#fff"
+                                android:fontFamily="@font/fira_sans"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="$800  "/>
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_corners"
+                                android:fontFamily="@font/anton_regular"
+                                android:gravity="center"
+                                android:textColor="#ffae00"
+                                android:text="rent"
+                                android:textSize="7dp" />
+                        </FrameLayout>
+                            <!-- Add more items if needed -->
+
+                        </LinearLayout>
+                    </ScrollView>
+
+
+            </GridLayout>
+
+            <FrameLayout
+                android:id="@+id/fullAmount"
+                android:layout_width="330dp"
+                android:layout_height="100dp"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:background="@drawable/rounded_corners" >
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:background="#282E32"
+                    app:srcCompat="@drawable/dollarexpense" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold"
+                    android:textFontWeight="900"
+                    android:text="Total expense"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/fira_sans"
+                    android:textStyle="bold"
+                    android:textFontWeight="900"
+                    android:textSize="40dp"
+                    android:textColor="#fff"
+                    android:text="$9,804"/>
+            </FrameLayout>
+
+
+        </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
